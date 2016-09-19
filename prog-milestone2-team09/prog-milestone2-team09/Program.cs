@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace prog_milestone2_team06
@@ -10,63 +11,128 @@ namespace prog_milestone2_team06
     {
         static void Main(string[] args)
         {
-            int milliseconds = 2000;
-            var menuchoice = "m";
+            int longtime = 2000;
+            int shorttime = 1000;
+            char menuchoice = '0';
 
-            while (menuchoice == "m")
+            //
+            // The actual menu. While and switch method.
+            //
+
+            while (menuchoice == '0')
             {
 
                 Console.Clear();
-                Console.WriteLine("Please select an option:");
-                Console.WriteLine("a. Jeremy");
-                Console.WriteLine("b. Amber");
-                Console.WriteLine("c. Belinda");
-                Console.WriteLine("d. Jacob");
+                Console.WriteLine();
+                TitleColor("Please select an option:");
+                Console.WriteLine();
+                JeremyColor("1. Jeremy ");
+                AmberColor("2. Amber  ");
+                BelindaColor("3. Belinda");
+                JacobColor("4. Jacob  ");
 
-                menuchoice = Console.ReadLine();
-                menuchoice = menuchoice.ToLower();
+                menuchoice = Console.ReadKey(false).KeyChar;
 
                 switch (menuchoice)
                 {
-                    case "a":
+                    case '1':
                         Console.Clear();
+                        Console.WriteLine();
                         // Call Jeremy Method here
-                        Console.WriteLine("Jeremys Method will run here");
-                        System.Threading.Thread.Sleep(milliseconds);
-                        menuchoice = "m";
+                        JeremyColor("Jeremys Method will run here");
+                        Thread.Sleep(longtime);
+                        menuchoice = '0';
                         break;
-                    case "b":
+                    case '2':
                         Console.Clear();
+                        Console.WriteLine();
                         // Call Amber Method here
-                        Console.WriteLine("Ambers Method will run here");
-                        System.Threading.Thread.Sleep(milliseconds);
-                        menuchoice = "m";
+                        AmberColor("Ambers Method will run here");
+                        Thread.Sleep(longtime);
+                        menuchoice = '0';
                         break;
-                    case "c":
+                    case '3':
                         Console.Clear();
+                        Console.WriteLine();
                         // Call Belinda Method here
-                        Console.WriteLine("Belindas Method will run here");
-                        System.Threading.Thread.Sleep(milliseconds);
-                        menuchoice = "m";
+                        BelindaColor("Belindas Method will run here");
+                        Thread.Sleep(longtime);
+                        menuchoice = '0';
                         break;
-                    case "d":
+                    case '4':
                         Console.Clear();
-                        // Call Belinda Method here
-                        Console.WriteLine("Jacobs Method will run here");
-                        System.Threading.Thread.Sleep(milliseconds);
-                        menuchoice = "m";
+                        Console.WriteLine();
+                        // Call Jacob Method here
+                        JacobColor("Jacobs Method will run here");
+                        Thread.Sleep(longtime);
+                        menuchoice = '0';
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Sorry, invalid selection.");
-                        System.Threading.Thread.Sleep(1000);
-                        Console.WriteLine("You will now return to the main menu");
-                        System.Threading.Thread.Sleep(milliseconds);
-                        menuchoice = "m";
+                        Console.WriteLine();
+                        WarningColor("Sorry, invalid selection.");
+                        Thread.Sleep(shorttime);
+                        WarningColor("You will now return to the main menu");
+                        Thread.Sleep(longtime);
+                        menuchoice = '0';
                         break;
                 }
             }
         }
+
+        //
+        // Some wanky color shit and centering for the menu. 
+        // Going to change it to 1 single Method with some if and while loop stuff.
+        // One Method per user color wont scale.
+        //
+
+        static void JeremyColor(string value)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            Console.ForegroundColor = ConsoleColor.DarkGreen;  //Set color here for Jeremy
+            Console.WriteLine(value); 
+            Console.ResetColor();
+        }
+        static void AmberColor(string value)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            Console.ForegroundColor = ConsoleColor.Magenta;  //Set color here for Amber
+            Console.WriteLine(value);
+            Console.ResetColor();
+        }
+        static void BelindaColor(string value)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            Console.ForegroundColor = ConsoleColor.Red;  //Set color here for Belinda
+            Console.WriteLine(value);
+            Console.ResetColor();
+        }
+        static void JacobColor(string value)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            Console.ForegroundColor = ConsoleColor.DarkCyan;  //Set color here for Jacob
+            Console.WriteLine(value);
+            Console.ResetColor();
+        }
+        static void TitleColor(string value)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            Console.ForegroundColor = ConsoleColor.DarkYellow;  //Set color here for Menu Title
+            Console.WriteLine(value);
+            Console.ResetColor();
+        }
+        static void WarningColor(string value)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            Console.ForegroundColor = ConsoleColor.Red;  //Set color here for Warning messages
+            Console.WriteLine(value);
+            Console.ResetColor();
+        }
+
+
+        //
+        // Stuff that Jeff actually wants bellow here
+        //
 
         static void jeremy()
         {
