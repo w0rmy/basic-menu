@@ -24,12 +24,12 @@ namespace prog_milestone2_team06
 
                 Console.Clear();
                 Console.WriteLine();
-                TitleColor("Please select an option:");
+                Color("Please select an option:", "Yellow");
                 Console.WriteLine();
-                JeremyColor("1. Jeremy ");
-                AmberColor("2. Amber  ");
-                BelindaColor("3. Belinda");
-                JacobColor("4. Jacob  ");
+                Color("1. Jeremy ", "Green");
+                Color("2. Amber  ", "Magenta");
+                Color("3. Belinda", "Red");
+                Color("4. Jacob  ", "Blue");
 
                 menuchoice = Console.ReadKey(false).KeyChar;
 
@@ -39,7 +39,7 @@ namespace prog_milestone2_team06
                         Console.Clear();
                         Console.WriteLine();
                         // Call Jeremy Method here
-                        JeremyColor("Jeremys Method will run here");
+                        Color("Jeremys Method will run here", "Green");
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
@@ -47,7 +47,7 @@ namespace prog_milestone2_team06
                         Console.Clear();
                         Console.WriteLine();
                         // Call Amber Method here
-                        AmberColor("Ambers Method will run here");
+                        Color("Ambers Method will run here", "Magenta");
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
@@ -55,7 +55,7 @@ namespace prog_milestone2_team06
                         Console.Clear();
                         Console.WriteLine();
                         // Call Belinda Method here
-                        BelindaColor("Belindas Method will run here");
+                        Color("Belindas Method will run here", "Red");
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
@@ -63,16 +63,16 @@ namespace prog_milestone2_team06
                         Console.Clear();
                         Console.WriteLine();
                         // Call Jacob Method here
-                        JacobColor("Jacobs Method will run here");
+                        Color("Jacobs Method will run here", "Blue");
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
                     default:
                         Console.Clear();
                         Console.WriteLine();
-                        WarningColor("Sorry, invalid selection.");
+                        Color("Sorry, invalid selection.", "White");
                         Thread.Sleep(shorttime);
-                        WarningColor("You will now return to the main menu");
+                        Color("You will now return to the main menu", "White");
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
@@ -82,52 +82,16 @@ namespace prog_milestone2_team06
 
         //
         // Some wanky color shit and centering for the menu. 
-        // Going to change it to 1 single Method with some if and while loop stuff.
-        // One Method per user color wont scale.
-        //
+        // 
 
-        static void JeremyColor(string value)
+        static void Color(string value, string colorChoice)
         {
             Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
-            Console.ForegroundColor = ConsoleColor.DarkGreen;  //Set color here for Jeremy
-            Console.WriteLine(value); 
-            Console.ResetColor();
-        }
-        static void AmberColor(string value)
-        {
-            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
-            Console.ForegroundColor = ConsoleColor.Magenta;  //Set color here for Amber
+            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), colorChoice);
             Console.WriteLine(value);
             Console.ResetColor();
         }
-        static void BelindaColor(string value)
-        {
-            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
-            Console.ForegroundColor = ConsoleColor.Red;  //Set color here for Belinda
-            Console.WriteLine(value);
-            Console.ResetColor();
-        }
-        static void JacobColor(string value)
-        {
-            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
-            Console.ForegroundColor = ConsoleColor.DarkCyan;  //Set color here for Jacob
-            Console.WriteLine(value);
-            Console.ResetColor();
-        }
-        static void TitleColor(string value)
-        {
-            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
-            Console.ForegroundColor = ConsoleColor.DarkYellow;  //Set color here for Menu Title
-            Console.WriteLine(value);
-            Console.ResetColor();
-        }
-        static void WarningColor(string value)
-        {
-            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
-            Console.ForegroundColor = ConsoleColor.Red;  //Set color here for Warning messages
-            Console.WriteLine(value);
-            Console.ResetColor();
-        }
+
 
 
         //
@@ -148,6 +112,7 @@ namespace prog_milestone2_team06
         {
             //Belindas last minute but exceptional code here
         }
+
         static void jacob()
         {
             //Jacob brings beer and has an impressive beard
