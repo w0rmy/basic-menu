@@ -19,9 +19,7 @@ namespace prog_milestone2_team06
             Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
             // Not 100% sure on how Enum.Parse works, but it works.
             Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), colorChoice);
-            // Write Colour
             Console.WriteLine(value);
-            // Reset colour
             Console.ResetColor();
         }
 
@@ -53,14 +51,10 @@ namespace prog_milestone2_team06
                 switch (menuchoice)
                 {
                     case '1': 
-                        // Every C# programe needs A Whole Lotta Rosie!
-                        SoundPlayer player = new SoundPlayer();
-                        player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "wlr.wav";
-                        player.Play();
-                        // Actual menu stuff
                         Console.Clear();
                         Console.Write(new string('\n', 10));
                         Color("Jeremys Method will run here", "Green"); // Call Jeremy Method here
+                        jeremy();
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
@@ -98,13 +92,16 @@ namespace prog_milestone2_team06
             }
         }
 
-
         //
         // Stuff that Jeff actually wants bellow here
         //
 
         static void jeremy()
         {
+            // Every C# programe needs A Whole Lotta Rosie!
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "wlr.wav";
+            player.Play();
             //Date calc method shit by me in here I guess
         }
 
