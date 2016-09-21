@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,11 +10,27 @@ namespace prog_milestone2_team06
 {
     class Program
     {
+        //
+        // Some wanky color shit and centering for the menu. 
+        // 
+        static void Color(string value, string colorChoice)
+        {
+            // Center Text. Take window size minus String lengh and devide by 2 and leave at top.
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            // Not 100% sure on how Enum.Parse works, but it works.
+            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), colorChoice);
+            // Write Colour
+            Console.WriteLine(value);
+            // Reset colour
+            Console.ResetColor();
+        }
+
         static void Main(string[] args)
         {
+
             int longtime = 2000;
             int shorttime = 1000;
-            char menuchoice = '0';
+            var menuchoice = '0';  
 
             //
             // The actual menu. While and switch method.
@@ -23,9 +40,9 @@ namespace prog_milestone2_team06
             {
 
                 Console.Clear();
-                Console.WriteLine();
+                Console.Write(new string('\n', 8));
                 Color("Please select an option:", "Yellow");
-                Console.WriteLine();
+                Console.Write(new string('\n', 2));
                 Color("1. Jeremy ", "Green");
                 Color("2. Amber  ", "Magenta");
                 Color("3. Belinda", "Red");
@@ -35,41 +52,42 @@ namespace prog_milestone2_team06
 
                 switch (menuchoice)
                 {
-                    case '1':
+                    case '1': 
+                        // Every C# programe needs A Whole Lotta Rosie!
+                        SoundPlayer player = new SoundPlayer();
+                        player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "wlr.wav";
+                        player.Play();
+                        // Actual menu stuff
                         Console.Clear();
-                        Console.WriteLine();
-                        // Call Jeremy Method here
-                        Color("Jeremys Method will run here", "Green");
+                        Console.Write(new string('\n', 10));
+                        Color("Jeremys Method will run here", "Green"); // Call Jeremy Method here
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
                     case '2':
                         Console.Clear();
-                        Console.WriteLine();
-                        // Call Amber Method here
-                        Color("Ambers Method will run here", "Magenta");
+                        Console.Write(new string('\n', 10));
+                        Color("Ambers Method will run here", "Magenta"); // Call Amber Method here
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
                     case '3':
                         Console.Clear();
-                        Console.WriteLine();
-                        // Call Belinda Method here
-                        Color("Belindas Method will run here", "Red");
+                        Console.Write(new string('\n', 10));
+                        Color("Belindas Method will run here", "Red"); // Call Belinda Method here
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
                     case '4':
                         Console.Clear();
-                        Console.WriteLine();
-                        // Call Jacob Method here
-                        Color("Jacobs Method will run here", "Blue");
+                        Console.Write(new string('\n', 10));
+                        Color("Jacobs Method will run here", "Blue"); // Call Jacob Method here
                         Thread.Sleep(longtime);
                         menuchoice = '0';
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine();
+                        Console.Write(new string('\n', 10));
                         Color("Sorry, invalid selection.", "White");
                         Thread.Sleep(shorttime);
                         Color("You will now return to the main menu", "White");
@@ -79,19 +97,6 @@ namespace prog_milestone2_team06
                 }
             }
         }
-
-        //
-        // Some wanky color shit and centering for the menu. 
-        // 
-
-        static void Color(string value, string colorChoice)
-        {
-            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
-            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), colorChoice);
-            Console.WriteLine(value);
-            Console.ResetColor();
-        }
-
 
 
         //
