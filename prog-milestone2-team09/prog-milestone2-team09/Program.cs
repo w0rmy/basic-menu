@@ -26,6 +26,7 @@ namespace prog_milestone2_team06
         static void Main(string[] args)
         {
 
+
             int longtime = 2000;
             int shorttime = 1000;
             var menuchoice = '0';  
@@ -99,8 +100,8 @@ namespace prog_milestone2_team06
         static void jeremy()
         {
             // Every C# programe needs A Whole Lotta Rosie!
-            SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "wlr.wav";
+            var player = new System.Media.SoundPlayer();
+            player.Stream = prog_milestone2_team09.Properties.Resources.wlr;
             player.Play();
             //Date calc method shit by me in here I guess
         }
