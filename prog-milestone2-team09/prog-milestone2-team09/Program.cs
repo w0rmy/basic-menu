@@ -22,10 +22,19 @@ namespace prog_milestone2_team06
             Console.WriteLine(value);
             Console.ResetColor();
         }
+        //
+        // She's a whole lotta woman, A whole lotta rosie!
+        //
+        static void acdc()
+        {
+            var acdc = new SoundPlayer();
+            acdc.Stream = prog_milestone2_team09.Properties.Resources.wlr;
+            acdc.Play();
+        }
 
         static void Main(string[] args)
         {
-
+            acdc();
 
             int longtime = 2000;
             int shorttime = 1000;
@@ -55,8 +64,9 @@ namespace prog_milestone2_team06
                         Console.Clear();
                         Console.Write(new string('\n', 10));
                         Color("Jeremys Method will run here", "Green"); // Call Jeremy Method here
-                        jeremy();
                         Thread.Sleep(longtime);
+                        Console.Clear();
+                        jeremy();
                         menuchoice = '0';
                         break;
                     case '2':
@@ -99,11 +109,22 @@ namespace prog_milestone2_team06
 
         static void jeremy()
         {
-            // Every C# programe needs A Whole Lotta Rosie!
-            var player = new System.Media.SoundPlayer();
-            player.Stream = prog_milestone2_team09.Properties.Resources.wlr;
-            player.Play();
-            //Date calc method shit by me in here I guess
+            // Allow the user to type in their date of birth 
+            Console.Write(new string('\n', 8));
+            Color("Please enter your birthdate YYYY/MM/DD", "White");
+            Console.SetCursorPosition((Console.WindowWidth - 10) / 2, Console.CursorTop);
+            DateTime birthDate = DateTime.Parse(Console.ReadLine());
+            // Tell the user how many days old they are 
+            var daysOld = DateTime.Now - birthDate;            
+            Color($"your birthdate is {birthDate}. Todays date is " + DateTime.Now + $" and you are {daysOld} days old", "Green");
+            Console.ReadLine();
+        }
+        static void jeremy2()
+        { 
+            // Create a method that takes a number (which will be the number of years) 
+            // Allow the user to type in that number which will be used in a calculation 
+            // Tell the user how many days the amount of years are that the user typed in 
+            // Note that if you for example do the straight calculation  20 * 365 the answer will be wrong 
         }
 
         static void amber()
