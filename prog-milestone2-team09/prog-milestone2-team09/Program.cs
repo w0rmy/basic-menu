@@ -10,6 +10,11 @@ namespace prog_milestone2_team06
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            acdc();
+            mainmenu();
+        }
         static void Color(string value, string colorChoice)
         {
             Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
@@ -17,20 +22,12 @@ namespace prog_milestone2_team06
             Console.WriteLine(value);
             Console.ResetColor();
         }
-        //
         // She's a whole lotta woman, A whole lotta rosie!
-        //
         static void acdc()
         {
             var acdc = new SoundPlayer();
             acdc.Stream = prog_milestone2_team09.Properties.Resources.wlr;
             acdc.Play();
-        }
-        // Jeremy Menu
-        static void Main(string[] args)
-        {
-            acdc();
-            mainmenu();
         }
         static void mainmenu()
         {
@@ -79,7 +76,6 @@ namespace prog_milestone2_team06
                 }
             }
         }
-        // Jeremy Methods
         static void jeremysubmenu()
         {
             Console.Clear();
