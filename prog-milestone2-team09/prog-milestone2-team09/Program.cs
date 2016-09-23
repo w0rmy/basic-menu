@@ -79,8 +79,18 @@ namespace prog_milestone2_team06
         static void jeremysubmenu()
         {
             Console.Clear();
-            Console.Write(new string('\n', 10));
+            Console.Write(new string('\n', 4));
             Color("Please Select an Application to run", "White");
+            Console.Write(new string('\n', 1));
+            Color("                      (`.-,')", "Gray");
+            Color("                    .-'     ;", "Gray");
+            Color("                _.-'   , `,- ", "Gray");
+            Color("          _ _.-'     .'  /._ ", "Gray");
+            Color("        .' `  _.-.  /  ,'._;)", "Gray");
+            Color("       (       .  )-| (      ", "Gray");
+            Color("        )`,_ ,'_,'  `_;)     ", "Gray");
+            Color("('_  _,'.'  (___,))          ", "Gray");
+            Color(" `-:;.-'                     ", "Gray");
             Console.Write(new string('\n', 1));
             Color("1. Calculate How many days old you are ", "Green");
             Color("2. Cant Remember yet                   ", "Magenta");
@@ -114,10 +124,22 @@ namespace prog_milestone2_team06
         static void ambersubmenu()
         {
             Console.Clear();
-            Console.Write(new string('\n', 10));
+            Console.Write(new string('\n', 4));
             Color("Please Select an Application to run", "White");
             Console.Write(new string('\n', 1));
-            Color("1. Amber Application one  ", "Green");
+            Color("         _ _         ", "Red");
+            Color("       _{ ' }_       ", "Red");
+            Color("      { `.!.` }      ", "Red");
+            Color("      ',_/Y._,'      ", "Red");
+            Color("        {_,_}        ", "Red");
+            Color("          |          ", "Green");
+            Color("         (|  /)      ", "Green");
+            Color("          | //       ", "Green");
+            Color("          |//        ", "Green");
+            Color("       \\ |/  //     ", "Green");
+            Color("   ^^^^^^^^^^^^^^^   ", "Green");
+            Console.Write(new string('\n', 1));
+            Color("1. Amber Application one  ", "Yellow");
             Color("2. Amber Application two  ", "Magenta");
             Color("3. Amber Application three", "Blue");
             Console.Write(new string('\n', 1));
@@ -155,8 +177,18 @@ namespace prog_milestone2_team06
         static void belindasubmenu()
         {
             Console.Clear();
-            Console.Write(new string('\n', 10));
+            Console.Write(new string('\n', 4));
             Color("Please Select an Application to run", "White");
+            Console.Write(new string('\n', 1));
+            Color("       .---.'''.          ", "Cyan");
+            Color("      /___/:(O:)`         ", "Cyan");
+            Color("        `-`:::::/         ", "Cyan");
+            Color("          //:::\\         ", "Cyan");
+            Color("         {{:::::}}        ", "Cyan");
+            Color("    ------;;---;;-------  ", "Gray");
+            Color("            |||           ", "Cyan");
+            Color("            |||           ", "Cyan");
+            Color("            '|'           ", "Cyan");
             Console.Write(new string('\n', 1));
             Color("1. Belinda Application one  ", "Green");
             Color("2. Belinda Application two  ", "Magenta");
@@ -196,8 +228,20 @@ namespace prog_milestone2_team06
         static void jacobsubmenu()
         {
             Console.Clear();
-            Console.Write(new string('\n', 10));
+            Console.Write(new string('\n', 4));
             Color("Please Select an Application to run", "White");
+            Console.Write(new string('\n', 1));
+            Color("      ( o )o)           ", "White");
+            Color("     ( o )o )o)         ", "White");
+            Color("    (o( ~~~~~~~~o       ", "White");
+            Color("   ( )|)       |-.      ", "DarkGray");
+            Color("     o|        |-. `    ", "DarkGray");
+            Color("     o|        |  ` `   ", "DarkGray");
+            Color("      |        |   | |  ", "DarkGray");
+            Color("     o|        |  / /   ", "DarkGray");
+            Color("      |        |.' '    ", "DarkGray");
+            Color("      |        |- '     ", "DarkGray");
+            Color("      .========.        ", "DarkGray");
             Console.Write(new string('\n', 1));
             Color("1. Jacob Application one  ", "Green");
             Color("2. Jacob Application two  ", "Magenta");
