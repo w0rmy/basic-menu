@@ -39,7 +39,7 @@ namespace prog_milestone2_team06
 
                 Console.Clear();
                 Console.Write(new string('\n', 8));
-                Color("Please select an option:", "Yellow");
+                Color("Please select an Student:", "Yellow");
                 Console.Write(new string('\n', 2));
                 Color("1. Jeremy ", "Green");
                 Color("2. Amber  ", "Magenta");
@@ -93,7 +93,7 @@ namespace prog_milestone2_team06
             Color(" `-:;.-'                     ", "Gray");
             Console.Write(new string('\n', 1));
             Color("1. Calculate How many days old you are ", "Green");
-            Color("2. Cant Remember yet                   ", "Magenta");
+            Color("2. Convert Years to Days               ", "Blue");
             Console.Write(new string('\n', 1));
             Color("3. Return to main menu.                ", "White");
             var option = Console.ReadKey(false).KeyChar;
@@ -290,18 +290,44 @@ namespace prog_milestone2_team06
             string[] days = stringDays.Split('.');
             Console.Write(new string('\n', 2));
             Color($"You are {days[0]} days old", "Green");
-            Console.ReadLine();
+            Console.Write(new string('\n', 4));
+            Color("Press any key to continue.", "White");
+            Console.ReadKey();
         }
         static void jeremy2()
         {
-            // Create a method that takes a number (which will be the number of years) 
+            // Commented out. This shows I know how to achieve the result using DateTime. But that I believe I can find cleaner code using simple math.
+            //Console.Clear();
+            //Console.Write(new string('\n', 8));
+            //Color("Please enter a number of years.", "White");
+            //Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
+            //int years = int.Parse(Console.ReadLine());
+            //var date = DateTime.Now;
+            //var newdate = date.AddYears(-years);
+            //var span = (date - newdate);
+            //var stringDays = span.ToString();
+            //string[] days = stringDays.Split('.');
+            //Console.Write(new string('\n', 2));
+            //Color($"That is {days[0]} days", "Green");
+            //Console.Write(new string('\n', 4));
+            //Color("Press any key to continue.", "White");
+            //Console.ReadKey();
+
             Console.Clear();
             Console.Write(new string('\n', 8));
             Color("Please enter a number of years.", "White");
-            var years = int.Parse(Console.ReadLine());
-            // Tell the user how many days the amount of years are that the user typed in 
-            // Note that if you for example do the straight calculation  20 * 365 the answer will be wrong 
+            Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
+            int years = int.Parse(Console.ReadLine());
+            int span = years * 365;
+            int leaps = years / 4;
+            Color($"That is " + (span + leaps) + " days", "Green");
+            Console.Write(new string('\n', 4));
+            Color("Press any key to continue.", "White");
+            Console.ReadKey();
         }
+        //
+        // Filer Methods until others have their code
+        //
         static void amber1()
         {
             Console.Clear();
