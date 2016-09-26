@@ -401,15 +401,26 @@ namespace prog_milestone2_team06
             }
             Console.WriteLine();
             Color($"You guessed {score} correct", "Gray");
-            Console.ReadKey();
+            Console.WriteLine();
+            jacob2();
 
         }
         static void jacob2()
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Jacob method two.", "White");
-            Thread.Sleep(2000);
+
+            Color("Would you like to play again?  y/n", "Gray");
+            var answer = Console.ReadKey(false).KeyChar;
+
+            if (answer == 'y')
+
+            {
+                jacob1();
+            }
+            
+            //Console.Clear();
+            //Console.Write(new string('\n', 10));
+            //Color("Jacob method two.", "White");
+            //Thread.Sleep(2000);
         }
         static void jacob3()
         {
