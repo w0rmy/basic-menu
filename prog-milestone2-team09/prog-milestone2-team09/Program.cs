@@ -372,10 +372,37 @@ namespace prog_milestone2_team06
         }
         static void jacob1()
         {
+
             Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Jacob method one.", "White");
-            Thread.Sleep(2000);
+
+            int score = 0;
+
+            int i = 1;
+            while (i < 6)
+            {
+
+                Color("You get 5 chances to pick a random number Correcly", "Gray");
+                Color($"Guess: {i}", "Gray");
+                Console.WriteLine();
+                int number = 0; // Just to make sure a new random is being generated
+                Color("Please enter a number between 1 and 5", "Gray");
+                Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
+                int guess = int.Parse(Console.ReadLine());
+                Random r = new Random();
+                number = r.Next(1, 5);
+                Color($"The answer was: {number}", "Gray");
+                if (guess == number)
+                {
+                    score++;
+                }
+                i++;
+                Thread.Sleep(2300);
+                Console.Clear();
+            }
+            Console.WriteLine();
+            Color($"You guessed {score} correct", "Gray");
+            Console.ReadKey();
+
         }
         static void jacob2()
         {
