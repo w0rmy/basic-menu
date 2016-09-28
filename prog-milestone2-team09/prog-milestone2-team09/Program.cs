@@ -243,11 +243,9 @@ namespace prog_milestone2_team06
             Color("      |        |- '     ", "DarkGray");
             Color("      .========.        ", "DarkGray");
             Console.Write(new string('\n', 1));
-            Color("1. Jacob Application one  ", "Green");
-            Color("2. Jacob Application two  ", "Magenta");
-            Color("3. Jacob Application three", "Blue");
+            Color("1. Play a random guessing game  ", "Green");
             Console.Write(new string('\n', 1));
-            Color("4. Return to main menu.   ", "White");
+            Color("2. Return to main menu.   ", "White");
             var option = Console.ReadKey(false).KeyChar;
 
             if (option == '1')
@@ -256,16 +254,6 @@ namespace prog_milestone2_team06
                 jacobsubmenu();
             }
             if (option == '2')
-            {
-                jacob2();
-                jacobsubmenu();
-            }
-            if (option == '3')
-            {
-                jacob3();
-                jacobsubmenu();
-            }
-            if (option == '4')
             {
                 mainmenu();
             }
@@ -409,13 +397,6 @@ namespace prog_milestone2_team06
             Console.Clear();
             Console.Write(new string('\n', 10));
             Color("Jacob method two.", "White");
-            Thread.Sleep(2000);
-        }
-        static void jacob3()
-        {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Jacob method three.", "White");
             Thread.Sleep(2000);
         }
     }
