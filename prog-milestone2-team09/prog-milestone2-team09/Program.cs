@@ -334,7 +334,43 @@ namespace prog_milestone2_team06
         //Color("Amber method one.", "White");
         //Thread.Sleep(2000);
 
+        { private static bool sum;
+        private static int avg;
+        private static int percentage;
+
+        static void Main(string[] args)
         {
+
+            var mark = 0;
+
+        }
+        static void LevelFive()
+        {
+            // need to set a format for the entering and readline of data
+            int mark;
+            Console.WriteLine("enter your first paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter your second paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter your third paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+            // only level 5 have the next paper
+            Console.WriteLine("enter yourfourth paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(sum);
+            avg = sum / 4;
+            Console.WriteLine("the avg is {0}", avg);
+            percentage = sum * 100 / 500;
+            Console.WriteLine("the percentage is {0}", percentage);
+            Console.WriteLine("Please enter your student ID number");
+        }
+    }
+
+    namespace GradeCalculator
+    {
+        class Program
+    
                 if (Score >= 90 && Score <= 100)
                 {
                     return "A+";
