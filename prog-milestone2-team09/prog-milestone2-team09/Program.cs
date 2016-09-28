@@ -316,13 +316,98 @@ namespace prog_milestone2_team06
         //
         // Filer Methods until others have their code
         //
-        static void amber1()
+        static string CalculateGrade(int Score)
+        // Console.Clear();
+        // Console.Write(new string('\n', 10));///('\n', 10) prints out 10x
+        //Color("Amber method one.", "White");
+        //Thread.Sleep(2000);
+
+        { private static bool sum;
+        private static int avg;
+        private static int percentage;
+
+        static void Main(string[] args)
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Amber method one.", "White");
-            Thread.Sleep(2000);
+
+            var mark = 0;
+
         }
+        static void LevelFive()
+        {
+            // need to set a format for the entering and readline of data
+            int mark;
+            Console.WriteLine("enter your first paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter your second paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter your third paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+            // only level 5 have the next paper
+            Console.WriteLine("enter yourfourth paper code and mark");
+            mark = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(sum);
+            avg = sum / 4;
+            Console.WriteLine("the avg is {0}", avg);
+            percentage = sum * 100 / 500;
+            Console.WriteLine("the percentage is {0}", percentage);
+            Console.WriteLine("Please enter your student ID number");
+        }
+    }
+
+    namespace GradeCalculator
+    {
+        class Program
+    
+                if (Score >= 90 && Score <= 100)
+                {
+                    return "A+";
+                }
+                else if (Score >= 85 && Score <= 89)
+                {
+                    return "A";
+                }
+                else if (Score >= 80 && Score <= 84)
+                {
+                    return "A-";
+                }
+                else if (Score >= 75 && Score <= 79)
+                {
+                    return "B+";
+                }
+                else if (Score >= 70 && Score <= 74)
+                {
+                    return "B";
+                }
+                else if (Score >= 65 && Score <= 69)
+                {
+                    return "B-";
+                }
+                else if (Score >= 60 && Score <= 64)
+                {
+                    return "C+";
+                }
+                else if (Score >= 55 && Score <= 59)
+                {
+                    return "C";
+                }
+                else if (Score >= 50 && Score <= 54)
+                {
+                    return "C-";
+                }
+                else if (Score >= 40 && Score <= 49)
+                {
+                    return "D";
+                }
+                else if (Score >= 0 && Score <= 39)
+                {
+                    return "E";
+                }
+                else
+                {
+                    return "Invalid Input";
+                }
+            }
         static void amber2()
         {
             Console.Clear();
@@ -339,17 +424,31 @@ namespace prog_milestone2_team06
         }
         static void belinda1()
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Belinda method one.", "White");
-            Thread.Sleep(2000);
+            var ab = new Dictionary<string, int>();
+            int i = 0;
+            while (i < 5)
+            {
+                Console.WriteLine("Enter a favourite food");
+                string a = Console.ReadLine();
+                Console.WriteLine("Rate the favourite food you just entered 1-5");
+                int b = int.Parse(Console.ReadLine());
+                ab.Add(a, b);
+
+
+                i++;
+
+                Console.Clear();
+
+            }
+            foreach (var x in ab)
+            {
+                Console.WriteLine($"{x.Key} & {x.Value}");
+            }
         }
         static void belinda2()
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Belinda method two.", "White");
-            Thread.Sleep(2000);
+            //need to work out how to get dictionary method1
+
         }
         static void belinda3()
         {
@@ -389,15 +488,26 @@ namespace prog_milestone2_team06
             }
             Console.WriteLine();
             Color($"You guessed {score} correct", "Gray");
-            Console.ReadKey();
+            Console.WriteLine();
+            jacob2();
 
         }
         static void jacob2()
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Jacob method two.", "White");
-            Thread.Sleep(2000);
+
+            Color("Would you like to play again?  y/n", "Gray");
+            var answer = Console.ReadKey(false).KeyChar;
+
+            if (answer == 'y')
+
+            {
+                jacob1();
+            }
+            
+            //Console.Clear();
+            //Console.Write(new string('\n', 10));
+            //Color("Jacob method two.", "White");
+            //Thread.Sleep(2000);
         }
     }
 }
