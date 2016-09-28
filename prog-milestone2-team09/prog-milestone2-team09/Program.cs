@@ -328,13 +328,62 @@ namespace prog_milestone2_team06
         //
         // Filer Methods until others have their code
         //
-        static void amber1()
+        static string CalculateGrade(int Score)
+        // Console.Clear();
+        // Console.Write(new string('\n', 10));///('\n', 10) prints out 10x
+        //Color("Amber method one.", "White");
+        //Thread.Sleep(2000);
+
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Amber method one.", "White");
-            Thread.Sleep(2000);
-        }
+                if (Score >= 90 && Score <= 100)
+                {
+                    return "A+";
+                }
+                else if (Score >= 85 && Score <= 89)
+                {
+                    return "A";
+                }
+                else if (Score >= 80 && Score <= 84)
+                {
+                    return "A-";
+                }
+                else if (Score >= 75 && Score <= 79)
+                {
+                    return "B+";
+                }
+                else if (Score >= 70 && Score <= 74)
+                {
+                    return "B";
+                }
+                else if (Score >= 65 && Score <= 69)
+                {
+                    return "B-";
+                }
+                else if (Score >= 60 && Score <= 64)
+                {
+                    return "C+";
+                }
+                else if (Score >= 55 && Score <= 59)
+                {
+                    return "C";
+                }
+                else if (Score >= 50 && Score <= 54)
+                {
+                    return "C-";
+                }
+                else if (Score >= 40 && Score <= 49)
+                {
+                    return "D";
+                }
+                else if (Score >= 0 && Score <= 39)
+                {
+                    return "E";
+                }
+                else
+                {
+                    return "Invalid Input";
+                }
+            }
         static void amber2()
         {
             Console.Clear();
