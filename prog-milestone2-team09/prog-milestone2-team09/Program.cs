@@ -400,10 +400,26 @@ namespace prog_milestone2_team06
         }
         static void belinda1()
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Belinda method one.", "White");
-            Thread.Sleep(2000);
+            var ab = new Dictionary<string, int>();
+            int i = 0;
+            while (i < 5)
+            {
+                Console.WriteLine("Enter a favourite food");
+                string a = Console.ReadLine();
+                Console.WriteLine("Rate the favourite food you just entered 1-5");
+                int b = int.Parse(Console.ReadLine());
+                ab.Add(a, b);
+
+
+                i++;
+
+                Console.Clear();
+
+            }
+            foreach (var x in ab)
+            {
+                Console.WriteLine($"{x.Key} & {x.Value}");
+            }
         }
         static void belinda2()
         {
