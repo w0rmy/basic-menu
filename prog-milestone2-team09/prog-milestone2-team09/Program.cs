@@ -423,10 +423,8 @@ namespace prog_milestone2_team06
         }
         static void belinda2()
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Belinda method two.", "White");
-            Thread.Sleep(2000);
+            //need to work out how to get dictionary method1
+
         }
         static void belinda3()
         {
