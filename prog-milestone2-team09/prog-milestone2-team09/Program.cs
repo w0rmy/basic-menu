@@ -364,8 +364,41 @@ namespace prog_milestone2_team06
             percentage = sum * 100 / 500;
             Console.WriteLine("the percentage is {0}", percentage);
             Console.WriteLine("Please enter your student ID number");
+            int[] array = new int[4];
+
+            int count = 1;
+
+
+
+            do
+
+            {
+
+                Console.Write("Enter grade {0}: ", count);
+
+                array.Add(int.Parse(Console.ReadLine()));
+
+                count++;
+
+
+
+            } while (count <= 4);
+
+
+
+            decimal grade = ComputeGrade(array);
+
+            char gradeLetter = LetterGrade(grade);
+
+
+
+            Console.WriteLine("Your Grade Letter is {0}.", gradeLetter);
+
+            Console.Read();
         }
+
     }
+}
 
     namespace GradeCalculator
     {
