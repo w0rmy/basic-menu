@@ -328,20 +328,17 @@ namespace prog_milestone2_team06
         }
         //
         // Filer Methods until others have their code
-        //
-
         // Console.Clear();
         // Console.Write(new string('\n', 10));///('\n', 10) prints out 10x
         //Color("Amber method one.", "White");
         //Thread.Sleep(2000);
 
       
-       
-namespace Amber
-    {
-        class Program
-        {
-            static void Main(string[] args)
+            static void Amber()
+            // If more time would have considered using temporary variables to collect the data 
+            //followed by the program logi that can be accessed multiple places
+            //then logic calculations
+        // The Method; What we want to do and how often is near the top,the tasks computer does on its own as part of task and what user sees on screen have been made clearer.
             {
                 Dictionary<Dictionary<string, string>, Dictionary<string, int>> gradeDict = new Dictionary<Dictionary<string, string>, Dictionary<string, int>>();
                 List<string> paperCodes = new List<string>();
@@ -391,6 +388,7 @@ namespace Amber
             {
                 List<string> letterGrades = new List<string>();
 
+            // Waikato Grade Scale has been used 2016,(waikato.ac.nz/sasd/files/pdf/gradescale.pdf)
                 foreach (int i in x)
                 {
                     string letterGrade;
@@ -507,8 +505,9 @@ namespace Amber
                 }
             }
 
-            public static Dictionary<Dictionary<string, string>, Dictionary<string, int>> setGrades()
-            {
+            public static Dictionary<Dictionary<string, string>, Dictionary<string, int>> setGrades()   
+            // Method to ask user level of study, 4/3 papers user imput, student ID and marks from user
+        {
                 int paperAmount = 0;
                 bool validCheck = true;
                 string level = "";
@@ -540,7 +539,7 @@ namespace Amber
 
                 for (int i = 0; i < paperAmount; i++)
                 {
-                    Console.WriteLine($"Please enter paper code, please remember the paper codes you have entered thank you. : ");
+                    Console.WriteLine($"Please enter paper code, thank you. : "); //To use this as a reference instead of getting some info reentered ideal
                     string paperCode = Console.ReadLine();
                     paperInfo.Add(paperCode, 0);
                 }
@@ -553,7 +552,7 @@ namespace Amber
                     validCheck = true;
                     while (validCheck)
                     {
-                        Console.WriteLine($"Please re-enter a paper code (as above): ");
+                        Console.WriteLine($"Please re-enter a paper code (as above): "); //Not tidy UI this could be updated in the future
                         string paperCode = Console.ReadLine();
                         int paperGrade = 0;
 
@@ -606,8 +605,6 @@ namespace Amber
         }
     }
 
-
-}
 static void belinda2()
         {
             //need to work out how to get dictionary method1
