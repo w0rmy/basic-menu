@@ -150,6 +150,7 @@ namespace prog_milestone2_team06
             {
                 amber1();
                 ambersubmenu();
+
             }
             if (option == '2')
             {
@@ -328,131 +329,128 @@ namespace prog_milestone2_team06
         //
         // Filer Methods until others have their code
         //
-        static string CalculateGrade(int Score)
+
         // Console.Clear();
         // Console.Write(new string('\n', 10));///('\n', 10) prints out 10x
         //Color("Amber method one.", "White");
         //Thread.Sleep(2000);
 
-        { private static bool sum;
-        private static int avg;
-        private static int percentage;
-
-        static void Main(string[] args)
+      
+         
         {
-
-            var mark = 0;
+            Dictionary<Dictionary<string, string>, Dictionary<string, int>> gradeDict = new Dictionary<Dictionary<string, string>, Dictionary<string, int>>():
+            List<string> paperCodes = new List<string>();
+            List<int> gradeList = new List<int>();
+            List<string> grades = new List<string>();
+            gradeDict = setGrades();
+            paperCodes = getPaperCodes(gradeDict);
+            gradeList =  getGradeInfo(gradeDict);
+            grades = getGradeInfo(gradeList);
+            printGrades(gradeDict, paperCodes, gradeList, grades);
+            calculateAverage(gradeList);
+            ListA(gradeList, paperCodes);
+            Console.ReadKey();
 
         }
-        static void LevelFive()
+        public static List<string> getPaperCodes(Dictionary<Dictionary<string, string>, Dictionary<string, int>> x)
         {
-            // need to set a format for the entering and readline of data
-            int mark;
-            Console.WriteLine("enter your first paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter your second paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter your third paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
-            // only level 5 have the next paper
-            Console.WriteLine("enter yourfourth paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
+            Dictionary<string, int> paperInfo = new Dictionary<string, int>();
+            List<string> paperCodes = new List<string>();
+            Dictionary<string, string> LevelID = x.Keys.ElementAt(0);
+            x.TryGetValue(LevelID, out paperInfo);
 
-            Console.WriteLine(sum);
-            avg = sum / 4;
-            Console.WriteLine("the avg is {0}", avg);
-            percentage = sum * 100 / 500;
-            Console.WriteLine("the percentage is {0}", percentage);
-            Console.WriteLine("Please enter your student ID number");
-            int[] array = new int[4];
-
-            int count = 1;
-
-
-
-            do
-
+            foreach (KeyValuePair<string, int> entry in paperInfo)
             {
+                paperCodes.Add(entry.Key);
 
-                Console.Write("Enter grade {0}: ", count);
+            }
 
-                array.Add(int.Parse(Console.ReadLine()));
-
-                count++;
-
-
-
-            } while (count <= 4);
-
-
-
-            decimal grade = ComputeGrade(array);
-
-            char gradeLetter = LetterGrade(grade);
-
-
-
-            Console.WriteLine("Your Grade Letter is {0}.", gradeLetter);
-
-            Console.Read();
+            return paperCodes;
         }
+        puplic static List<int> getGradeInfo(Dictionary<Dictionary<string, string>, Dictionary<string,int >> x)
+        {
+            Dictionary<string, int> paperInfo = new Dictionary<string, int>();
+            List<int> gradeInfo = new List<int>();
+            Dictionary<string, string> LevelID = x.Keys.ElementAt(0);
+            x.TryGetValue(LevelID, out paperInfo);
 
-    }
-}
+            foreach (KeyValuePair<string, int> entry in paperInfo)
+            {
+                gradeInfo.Add(entry.Value);
 
-    namespace GradeCalculator
-    {
-        class Program
+            }
+
+            return gradeInfo;
+        }
+           
     
-                if (Score >= 90 && Score <= 100)
+
+    public static List<string getGrades(List<int> x)   
+    {
+  
+    List<string> grades = new List<string>();
+
+    for each (int i in x)
+    {
+
+        string grade;
+                if (grade >= 90 && grade <= 100)
                 {
                     return "A+";
                 }
-                else if (Score >= 85 && Score <= 89)
+                else if (grade >= 85 && grade <= 89)
                 {
                     return "A";
                 }
-                else if (Score >= 80 && Score <= 84)
+                else if (grade >= 80 && grade <= 84)
                 {
                     return "A-";
                 }
-                else if (Score >= 75 && Score <= 79)
+                else if (grade >= 75 && grade <= 79)
                 {
                     return "B+";
                 }
-                else if (Score >= 70 && Score <= 74)
+                else if (grade >= 70 && grade <= 74)
                 {
                     return "B";
                 }
-                else if (Score >= 65 && Score <= 69)
+                else if (grade >= 65 && grade <= 69)
                 {
                     return "B-";
                 }
-                else if (Score >= 60 && Score <= 64)
+                else if (grade >= 60 && \grade <= 64)
                 {
                     return "C+";
                 }
-                else if (Score >= 55 && Score <= 59)
+                else if (grade >= 55 && grade <= 59)
                 {
                     return "C";
                 }
-                else if (Score >= 50 && Score <= 54)
+                else if (grade >= 50 && grade <= 54)
                 {
                     return "C-";
                 }
-                else if (Score >= 40 && Score <= 49)
+                else if (grade >= 40 && grade <= 49)
                 {
                     return "D";
                 }
-                else if (Score >= 0 && Score <= 39)
+                else if (grade >= 0 && grade <= 39)
                 {
                     return "E";
                 }
                 else
                 {
                     return "Invalid Input";
-                }
-            }
+     
+    }
+   
+        static void Main(string[] args)
+        {
+
+            var mark = 0;
+            
+      
+       
         static void amber2()
         {
             Console.Clear();
