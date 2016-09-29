@@ -153,7 +153,7 @@ namespace prog_milestone2_team06
             }
             if (option == '2')
             {
-                amber2();
+                amber3();
                 ambersubmenu();
             }
             if (option == '3')
@@ -243,11 +243,9 @@ namespace prog_milestone2_team06
             Color("      |        |- '     ", "DarkGray");
             Color("      .========.        ", "DarkGray");
             Console.Write(new string('\n', 1));
-            Color("1. Jacob Application one  ", "Green");
-            Color("2. Jacob Application two  ", "Magenta");
-            Color("3. Jacob Application three", "Blue");
+            Color("1. Play a random guessing game  ", "Green");
             Console.Write(new string('\n', 1));
-            Color("4. Return to main menu.   ", "White");
+            Color("2. Return to main menu.   ", "White");
             var option = Console.ReadKey(false).KeyChar;
 
             if (option == '1')
@@ -256,16 +254,6 @@ namespace prog_milestone2_team06
                 jacobsubmenu();
             }
             if (option == '2')
-            {
-                jacob2();
-                jacobsubmenu();
-            }
-            if (option == '3')
-            {
-                jacob3();
-                jacobsubmenu();
-            }
-            if (option == '4')
             {
                 mainmenu();
             }
@@ -325,108 +313,114 @@ namespace prog_milestone2_team06
             Color("Press any key to continue.", "White");
             Console.ReadKey();
         }
-        //
-        // Filer Methods until others have their code
-        //
-        static string CalculateGrade(int Score)
-        // Console.Clear();
-        // Console.Write(new string('\n', 10));///('\n', 10) prints out 10x
-        //Color("Amber method one.", "White");
-        //Thread.Sleep(2000);
 
-        { private static bool sum;
-        private static int avg;
-        private static int percentage;
 
-        static void Main(string[] args)
+
+        static void amber1()
         {
+            //Commented out to get to compile
 
-            var mark = 0;
-
-        }
-        static void LevelFive()
-        {
             // need to set a format for the entering and readline of data
-            int mark;
-            Console.WriteLine("enter your first paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter your second paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter your third paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
+            //int mark1;
+            //int mark2;
+            //int mark3;
+            //int mark4;
+            //Console.WriteLine("enter your first paper code and mark");
+            //mark1 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("enter your second paper code and mark");
+            //mark2 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("enter your third paper code and mark");
+            //mark3 = Convert.ToInt32(Console.ReadLine());
             // only level 5 have the next paper
-            Console.WriteLine("enter yourfourth paper code and mark");
-            mark = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("enter yourfourth paper code and mark");
+            //mark4 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(sum);
-            avg = sum / 4;
-            Console.WriteLine("the avg is {0}", avg);
-            percentage = sum * 100 / 500;
-            Console.WriteLine("the percentage is {0}", percentage);
-            Console.WriteLine("Please enter your student ID number");
+
+            //Console.WriteLine(sum);
+            //avg = sum / 4;
+            //Console.WriteLine("the avg is {0}", avg);
+            //percentage = sum * 100 / 500;
+            //Console.WriteLine("the percentage is {0}", percentage);
+            //Console.WriteLine("Please enter your student ID number");
         }
-    }
+        static void amberscore(int score)
+        { 
+          //  Console.WriteLine(sum);
+          //  avg = sum / 4;
+          //  Console.WriteLine("the avg is {0}", avg);
+          //  percentage = sum * 100 / 500;
+          //  Console.WriteLine("the percentage is {0}", percentage);
+          //  Console.WriteLine("Please enter your student ID number");
+            int[] array = new int[4];
 
-    namespace GradeCalculator
-    {
-        class Program
-    
-                if (Score >= 90 && Score <= 100)
-                {
-                    return "A+";
-                }
-                else if (Score >= 85 && Score <= 89)
-                {
-                    return "A";
-                }
-                else if (Score >= 80 && Score <= 84)
-                {
-                    return "A-";
-                }
-                else if (Score >= 75 && Score <= 79)
-                {
-                    return "B+";
-                }
-                else if (Score >= 70 && Score <= 74)
-                {
-                    return "B";
-                }
-                else if (Score >= 65 && Score <= 69)
-                {
-                    return "B-";
-                }
-                else if (Score >= 60 && Score <= 64)
-                {
-                    return "C+";
-                }
-                else if (Score >= 55 && Score <= 59)
-                {
-                    return "C";
-                }
-                else if (Score >= 50 && Score <= 54)
-                {
-                    return "C-";
-                }
-                else if (Score >= 40 && Score <= 49)
-                {
-                    return "D";
-                }
-                else if (Score >= 0 && Score <= 39)
-                {
-                    return "E";
-                }
-                else
-                {
-                    return "Invalid Input";
-                }
-            }
-        static void amber2()
+            int count = 1;
+            
+            do
+            {
+                Console.Write("Enter grade {0}: ", count);
+                array.Add(int.Parse(Console.ReadLine()));
+                count++;                                
+            } while (count <= 4);
+
+            // decimal grade = ComputeGrade(array);
+            //char gradeLetter = LetterGrade(grade);
+            Console.WriteLine("Your Grade Letter is {0}.", amber2());
+            Console.Read();
+        }
+
+        static string amber2(int score)
+
         {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Amber method two.", "White");
-            Thread.Sleep(2000);
+            if (score >= 90 && score <= 100)
+            {
+                return "A+";
+            }
+            else if (score >= 85 && score <= 89)
+            {
+                return "A";
+            }
+            else if (score >= 80 && score <= 84)
+            {
+                return "A-";
+            }
+            else if (score >= 75 && score <= 79)
+            {
+                return "B+";
+            }
+            else if (score >= 70 && score <= 74)
+            {
+                return "B";
+            }
+            else if (score >= 65 && score <= 69)
+            {
+                return "B-";
+            }
+            else if (score >= 60 && score <= 64)
+            {
+                return "C+";
+            }
+            else if (score >= 55 && score <= 59)
+            {
+                return "C";
+            }
+            else if (score >= 50 && score <= 54)
+            {
+                return "C-";
+            }
+            else if (score >= 40 && score <= 49)
+            {
+                return "D";
+            }
+            else if (score >= 0 && score <= 39)
+            {
+                return "E";
+            }
+            else
+            {
+                return "Invalid Input";
+            }
         }
+
         static void amber3()
         {
             Console.Clear();
@@ -506,27 +500,12 @@ namespace prog_milestone2_team06
         }
         static void jacob2()
         {
-
             Color("Would you like to play again?  y/n", "Gray");
             var answer = Console.ReadKey(false).KeyChar;
-
             if (answer == 'y')
-
             {
                 jacob1();
-            }
-            
-            //Console.Clear();
-            //Console.Write(new string('\n', 10));
-            //Color("Jacob method two.", "White");
-            //Thread.Sleep(2000);
-        }
-        static void jacob3()
-        {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Jacob method three.", "White");
-            Thread.Sleep(2000);
+            }            
         }
     }
 }
