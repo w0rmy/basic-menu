@@ -344,22 +344,22 @@ namespace prog_milestone2_team06
             //Console.WriteLine("Please enter your student ID number");
         }
         static void amberscore(int score)
-        { 
-          //  Console.WriteLine(sum);
-          //  avg = sum / 4;
-          //  Console.WriteLine("the avg is {0}", avg);
-          //  percentage = sum * 100 / 500;
-          //  Console.WriteLine("the percentage is {0}", percentage);
-          //  Console.WriteLine("Please enter your student ID number");
+        {
+            //  Console.WriteLine(sum);
+            //  avg = sum / 4;
+            //  Console.WriteLine("the avg is {0}", avg);
+            //  percentage = sum * 100 / 500;
+            //  Console.WriteLine("the percentage is {0}", percentage);
+            //  Console.WriteLine("Please enter your student ID number");
             int[] array = new int[4];
 
             int count = 1;
-            
+
             do
             {
                 Console.Write("Enter grade {0}: ", count);
                 array.Add(int.Parse(Console.ReadLine()));
-                count++;                                
+                count++;
             } while (count <= 4);
 
             // decimal grade = ComputeGrade(array);
@@ -430,31 +430,56 @@ namespace prog_milestone2_team06
         }
         static void belinda1()
         {
-            var ab = new Dictionary<string, int>();
+            food();
+        }
+
+        static void food()
+        {
+            var fr = new Dictionary<string, int>();
             int i = 0;
             while (i < 5)
             {
-                Console.WriteLine("Enter a favourite food");
-                string a = Console.ReadLine();
-                Console.WriteLine("Rate the favourite food you just entered 1-5");
-                int b = int.Parse(Console.ReadLine());
-                ab.Add(a, b);
-
+                Console.WriteLine("Enter a favourite food of yours");
+                string f = Console.ReadLine();
+                Console.WriteLine("Now rate that favourite food between 1-5");
+                int r = int.Parse(Console.ReadLine());
+                fr.Add(f, r);
 
                 i++;
 
                 Console.Clear();
-
             }
-            foreach (var x in ab)
+            foreach (var a in fr)
             {
-                Console.WriteLine($"{x.Key} & {x.Value}");
+                Console.WriteLine($"{a.Key} - {a.Value}");
             }
-        }
-        static void belinda2()
-        {
-            //need to work out how to get dictionary method1
+            Console.Clear();
 
+        } //method one ends 
+    
+    static void belinda2()
+    {
+         }
+        static void food(Dictionary<string, int> someDictionary)
+        {
+            {
+
+                Console.WriteLine("Would you like to display your favourite food in order of rate \"Y\" for yes or \"N\" for no");
+                var pick = (Console.ReadLine());
+
+                if (pick == "Y")
+                {
+                    //under finished
+
+                    Console.WriteLine("");
+                }
+                else if (pick == "N")
+                {
+                    Console.WriteLine("");
+
+                }
+
+            }
         }
         static void belinda3()
         {
