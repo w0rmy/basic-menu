@@ -140,10 +140,8 @@ namespace prog_milestone2_team06
             Color("   ^^^^^^^^^^^^^^^   ", "Green");
             Console.Write(new string('\n', 1));
             Color("1. Amber Application one  ", "Yellow");
-            Color("2. Amber Application two  ", "Magenta");
-            Color("3. Amber Application three", "Blue");
             Console.Write(new string('\n', 1));
-            Color("4. Return to main menu.   ", "White");
+            Color("2. Return to main menu.   ", "White");
             var option = Console.ReadKey(false).KeyChar;
 
             if (option == '1')
@@ -152,16 +150,6 @@ namespace prog_milestone2_team06
                 ambersubmenu();
             }
             if (option == '2')
-            {
-                amber3();
-                ambersubmenu();
-            }
-            if (option == '3')
-            {
-                amber3();
-                ambersubmenu();
-            }
-            if (option == '4')
             {
                 mainmenu();
             }
@@ -190,11 +178,10 @@ namespace prog_milestone2_team06
             Color("            |||           ", "Cyan");
             Color("            '|'           ", "Cyan");
             Console.Write(new string('\n', 1));
-            Color("1. Belinda Application one  ", "Green");
-            Color("2. Belinda Application two  ", "Magenta");
-            Color("3. Belinda Application three", "Blue");
+            Color("1. Rate some foods  ", "Green");
+            Color("2. View your foods  ", "Magenta");
             Console.Write(new string('\n', 1));
-            Color("4. Return to main menu.     ", "White");
+            Color("3. Return to main menu.     ", "White");
             var option = Console.ReadKey(false).KeyChar;
 
             if (option == '1')
@@ -208,11 +195,6 @@ namespace prog_milestone2_team06
                 belindasubmenu();
             }
             if (option == '3')
-            {
-                belinda3();
-                belindasubmenu();
-            }
-            if (option == '4')
             {
                 mainmenu();
             }
@@ -358,13 +340,13 @@ namespace prog_milestone2_team06
             do
             {
                 Console.Write("Enter grade {0}: ", count);
-                array.Add(int.Parse(Console.ReadLine()));
+              //  array.Add(int.Parse(Console.ReadLine()));
                 count++;
             } while (count <= 4);
 
             // decimal grade = ComputeGrade(array);
             //char gradeLetter = LetterGrade(grade);
-            Console.WriteLine("Your Grade Letter is {0}.", amber2());
+            //Console.WriteLine("Your Grade Letter is {0}.", amber2());
             Console.Read();
         }
 
@@ -421,13 +403,6 @@ namespace prog_milestone2_team06
             }
         }
 
-        static void amber3()
-        {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Amber method three.", "White");
-            Thread.Sleep(2000);
-        }
         static void belinda1()
         {
             food();
@@ -439,9 +414,10 @@ namespace prog_milestone2_team06
             int i = 0;
             while (i < 5)
             {
-                Console.WriteLine("Enter a favourite food of yours");
+                Console.Clear();
+                Color("Enter a favourite food of yours", "White");
                 string f = Console.ReadLine();
-                Console.WriteLine("Now rate that favourite food between 1-5");
+                Color("Now rate that favourite food between 1-5", "White");
                 int r = int.Parse(Console.ReadLine());
                 fr.Add(f, r);
 
@@ -464,7 +440,7 @@ namespace prog_milestone2_team06
         {
             {
 
-                Console.WriteLine("Would you like to display your favourite food in order of rate \"Y\" for yes or \"N\" for no");
+                Color("Would you like to display your favourite food in order of rate \"Y\" for yes or \"N\" for no", "White");
                 var pick = (Console.ReadLine());
 
                 if (pick == "Y")
@@ -481,13 +457,7 @@ namespace prog_milestone2_team06
 
             }
         }
-        static void belinda3()
-        {
-            Console.Clear();
-            Console.Write(new string('\n', 10));
-            Color("Belinda method three.", "White");
-            Thread.Sleep(2000);
-        }
+
         static void jacob1()
         {
 
