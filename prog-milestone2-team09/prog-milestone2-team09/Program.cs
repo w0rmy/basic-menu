@@ -335,6 +335,7 @@ namespace prog_milestone2_team06
             //Console.WriteLine("enter yourfourth paper code and mark");
             //mark4 = Convert.ToInt32(Console.ReadLine());
 
+<<<<<<< HEAD
             //Console.WriteLine(sum);
             //avg = sum / 4;
             //Console.WriteLine("the avg is {0}", avg);
@@ -343,6 +344,104 @@ namespace prog_milestone2_team06
             //Console.WriteLine("Please enter your student ID number");
         }
         static string amberscore(int score)
+=======
+            Console.WriteLine(sum);
+            avg = sum / 4;
+            Console.WriteLine("the avg is {0}", avg);
+            percentage = sum * 100 / 500;
+            Console.WriteLine("the percentage is {0}", percentage);
+            Console.WriteLine("Please enter your student ID number");
+            int[] array = new int[4];
+
+            int count = 1;
+
+
+
+            do
+
+            {
+
+                Console.Write("Enter grade {0}: ", count);
+
+                array.Add(int.Parse(Console.ReadLine()));
+
+                count++;
+
+
+
+            } while (count <= 4);
+
+
+
+            decimal grade = ComputeGrade(array);
+
+            char gradeLetter = LetterGrade(grade);
+
+
+
+            Console.WriteLine("Your Grade Letter is {0}.", gradeLetter);
+
+            Console.Read();
+        }
+
+    }
+}
+
+    namespace GradeCalculator
+    {
+        class Program
+    
+                if (Score >= 90 && Score <= 100)
+                {
+                    return "A+";
+                }
+                else if (Score >= 85 && Score <= 89)
+                {
+                    return "A";
+                }
+                else if (Score >= 80 && Score <= 84)
+                {
+                    return "A-";
+                }
+                else if (Score >= 75 && Score <= 79)
+                {
+                    return "B+";
+                }
+                else if (Score >= 70 && Score <= 74)
+                {
+                    return "B";
+                }
+                else if (Score >= 65 && Score <= 69)
+                {
+                    return "B-";
+                }
+                else if (Score >= 60 && Score <= 64)
+                {
+                    return "C+";
+                }
+                else if (Score >= 55 && Score <= 59)
+                {
+                    return "C";
+                }
+                else if (Score >= 50 && Score <= 54)
+                {
+                    return "C-";
+                }
+                else if (Score >= 40 && Score <= 49)
+                {
+                    return "D";
+                }
+                else if (Score >= 0 && Score <= 39)
+                {
+                    return "E";
+                }
+                else
+                {
+                    return "Invalid Input";
+                }
+            }
+        static void amber2()
+>>>>>>> f1b37b2b76e58555f083779b0c0f4c738af3f4d1
         {
             if (score >= 90 && score <= 100)
             {
