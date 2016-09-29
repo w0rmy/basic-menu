@@ -148,6 +148,7 @@ namespace prog_milestone2_team06
             {
                 amber1();
                 ambersubmenu();
+
             }
             if (option == '2')
             {
@@ -295,6 +296,7 @@ namespace prog_milestone2_team06
             Color("Press any key to continue.", "White");
             Console.ReadKey();
         }
+<<<<<<< HEAD
 
 
 
@@ -430,6 +432,290 @@ namespace prog_milestone2_team06
                 Console.WriteLine($"{a.Key} - {a.Value}");
             }
             Console.Clear();
+=======
+        //
+        // Filer Methods until others have their code
+        // Console.Clear();
+        // Console.Write(new string('\n', 10));///('\n', 10) prints out 10x
+        //Color("Amber method one.", "White");
+        //Thread.Sleep(2000);
+
+      
+            static void Amber()
+            // If more time would have considered using temporary variables to collect the data 
+            //followed by the program logi that can be accessed multiple places
+            //then logic calculations
+        // The Method; What we want to do and how often is near the top,the tasks computer does on its own as part of task and what user sees on screen have been made clearer.
+            {
+                Dictionary<Dictionary<string, string>, Dictionary<string, int>> gradeDict = new Dictionary<Dictionary<string, string>, Dictionary<string, int>>();
+                List<string> paperCodes = new List<string>();
+                List<int> gradeList = new List<int>();
+                List<string> letterGrades = new List<string>();
+                gradeDict = setGrades();
+                paperCodes = getPaperCodes(gradeDict);
+                gradeList = getGradeInfo(gradeDict);
+                letterGrades = getLetterGrades(gradeList);
+                printGrades(gradeDict, paperCodes, gradeList, letterGrades);
+                calculateAverage(gradeList);
+                listA(gradeList, paperCodes);
+                Console.ReadKey();
+            }
+
+            public static List<string> getPaperCodes(Dictionary<Dictionary<string, string>, Dictionary<string, int>> x)
+            {
+                Dictionary<string, int> paperInfo = new Dictionary<string, int>();
+                List<string> paperCodes = new List<string>();
+                Dictionary<string, string> levelID = x.Keys.ElementAt(0);
+                x.TryGetValue(levelID, out paperInfo);
+
+                foreach (KeyValuePair<string, int> entry in paperInfo)
+                {
+                    paperCodes.Add(entry.Key);
+                }
+
+                return paperCodes;
+            }
+
+            public static List<int> getGradeInfo(Dictionary<Dictionary<string, string>, Dictionary<string, int>> x)
+            {
+                Dictionary<string, int> paperInfo = new Dictionary<string, int>();
+                List<int> gradeInfo = new List<int>();
+                Dictionary<string, string> levelID = x.Keys.ElementAt(0);
+                x.TryGetValue(levelID, out paperInfo);
+
+                foreach (KeyValuePair<string, int> entry in paperInfo)
+                {
+                    gradeInfo.Add(entry.Value);
+                }
+
+                return gradeInfo;
+            }
+
+            public static List<string> getLetterGrades(List<int> x)
+            {
+                List<string> letterGrades = new List<string>();
+
+            // Waikato Grade Scale has been used 2016,(waikato.ac.nz/sasd/files/pdf/gradescale.pdf)
+                foreach (int i in x)
+                {
+                    string letterGrade;
+                    if (i >= 90)
+                    {
+                        letterGrade = "A+";
+                    }
+                    else if (i <= 89 && i >= 85)
+                    {
+                        letterGrade = "A";
+                    }
+                    else if (i <= 84 && i >= 80)
+                    {
+                        letterGrade = "A-";
+                    }
+                    else if (i <= 79 && i >= 75)
+                    {
+                        letterGrade = "B+";
+                    }
+                    else if (i <= 74 && i >= 70)
+                    {
+                        letterGrade = "B";
+                    }
+                    else if (i <= 69 && i >= 65)
+                    {
+                        letterGrade = "B-";
+                    }
+                    else if (i <= 64 && i >= 60)
+                    {
+                        letterGrade = "C+";
+                    }
+                    else if (i <= 59 && i >= 55)
+                    {
+                        letterGrade = "C";
+                    }
+                    else if (i <= 54 && i >= 50)
+                    {
+                        letterGrade = "C-";
+                    }
+                    else if (i <= 49 && i >= 40)
+                    {
+                        letterGrade = "D";
+                    }
+                    else
+                    {
+                        letterGrade = "E";
+                    }
+
+                    letterGrades.Add(letterGrade);
+                }
+
+                return letterGrades;
+            }
+
+            public static void printGrades(Dictionary<Dictionary<string, string>, Dictionary<string, int>> gradeDict, List<string> paperCodes, List<int> gradeInfo, List<string> letterInfo)
+            {
+                Dictionary<string, string> levelID = new Dictionary<string, string>();
+                string studentID;
+                string level;
+                levelID = gradeDict.Keys.ElementAt(0);
+                studentID = levelID.Keys.ElementAt(0);
+                level = levelID.Values.ElementAt(0);
+
+                Console.WriteLine($"Student ID: {studentID}");
+                Console.WriteLine($"Grade Level: {level}");
+                Console.WriteLine($"Paper Subjects: {String.Join(",", paperCodes)}");
+                Console.WriteLine($"Paper Percentages: {String.Join(",", gradeInfo)}");
+                Console.WriteLine($"Paper Letter Grades: {String.Join(",", letterInfo)}");
+            }
+
+            public static void calculateAverage(List<int> x)
+            {
+                double average = 0;
+                int sum = 0;
+
+                foreach (int i in x)
+                {
+                    sum += i;
+                }
+
+                average = sum / x.Count();
+                Console.WriteLine($"Your average grade mark is: {average}");
+
+                if (average <= 100 && average >= 50)
+                {
+                    Console.WriteLine($"Congradulations you have passed you level of study!  You may continue into the next level of your study pathway. ");
+                }
+                else
+                {
+                    Console.WriteLine($"I am sorry but the total of all your papers is not 50% so you do not pass.  Look into resiting the papers you did not pass. ");
+                }
+            }
+
+            public static void listA(List<int> gradeInfo, List<string> paperCodes)
+            {
+                List<string> highSubjects = new List<string>();
+
+                for (int i = 0; i < gradeInfo.Count(); i++)
+                {
+                    if (gradeInfo.ElementAt(i) >= 90)
+                    {
+                        highSubjects.Add(paperCodes.ElementAt(i));
+                    }
+                }
+
+                if (highSubjects.Count() > 0)
+                {
+                    Console.WriteLine($"Outstanding you achieved an 'A+' letter grade in the following subjects: {String.Join(", ", highSubjects)}");
+                }
+                else
+                {
+                    Console.WriteLine($"You did not score an 'A+' in any subject.");
+                    Console.WriteLine($"Get sum better study methods via the learning facilitators or actually study!");
+                }
+            }
+
+            public static Dictionary<Dictionary<string, string>, Dictionary<string, int>> setGrades()   
+            // Method to ask user level of study, 4/3 papers user imput, student ID and marks from user
+        {
+                int paperAmount = 0;
+                bool validCheck = true;
+                string level = "";
+                Dictionary<string, string> levelID = new Dictionary<string, string>();
+                Dictionary<string, int> paperInfo = new Dictionary<string, int>();
+                Dictionary<Dictionary<string, string>, Dictionary<string, int>> gradeInfo = new Dictionary<Dictionary<string, string>, Dictionary<string, int>>();
+
+                while (validCheck)
+                {
+                    Console.WriteLine($"Did you pass your level of study?");
+                    Console.WriteLine($"Please enter 5 for level 5, or enter 6 for level 6: ");
+                    level = Console.ReadLine();
+
+                    if (level == "6")
+                    {
+                        paperAmount = 3;
+                        validCheck = false;
+                    }
+                    else if (level == "5")
+                    {
+                        paperAmount = 4;
+                        validCheck = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: Please enter a valid level. Please enter 5 for level 5, or enter 6 for level 6:");
+                    }
+                }
+
+                for (int i = 0; i < paperAmount; i++)
+                {
+                    Console.WriteLine($"Please enter paper code, thank you. : "); //To use this as a reference instead of getting some info reentered ideal
+                    string paperCode = Console.ReadLine();
+                    paperInfo.Add(paperCode, 0);
+                }
+
+                Console.WriteLine($"Please Enter your Student ID Number: ");
+                string studentID = Console.ReadLine();
+
+                for (int i = 0; i < paperAmount; i++)
+                {
+                    validCheck = true;
+                    while (validCheck)
+                    {
+                        Console.WriteLine($"Please re-enter a paper code (as above): "); //Not tidy UI this could be updated in the future
+                        string paperCode = Console.ReadLine();
+                        int paperGrade = 0;
+
+                        if (paperInfo.TryGetValue(paperCode, out paperGrade))
+                        {
+                            paperGrade = 0;
+                            bool gradeCheck = true;
+
+                            while (gradeCheck)
+                            {
+                                Console.WriteLine($"Please enter the mark you recieved for that paper: ");
+                                try
+                                {
+                                    paperGrade = int.Parse(Console.ReadLine());
+
+                                    if (paperGrade <= 100 && paperGrade >= 0)
+                                    {
+                                        paperInfo.Remove(paperCode);
+                                        paperInfo.Add(paperCode, paperGrade);
+                                        gradeCheck = false;
+                                    }
+                                    else
+                                    {
+
+
+                                        Console.WriteLine($"Error: Please enter an integer between 0 and 100.");
+
+                                    }
+
+                                }
+
+                                catch (FormatException)
+                                {
+                                    Console.WriteLine($"Error: Invalid Grade.");
+                                }
+                            }
+
+                            validCheck = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Error: Paper code not found. ");
+                        }
+                    }
+                }
+                levelID.Add(studentID, level);
+                gradeInfo.Add(levelID, paperInfo);
+                return gradeInfo;
+            }
+        }
+    }
+
+static void belinda2()
+        {
+            //need to work out how to get dictionary method1
+>>>>>>> remotes/amber_johnsen/prog-milestone2-team09/master
 
         } //method one ends 
     
