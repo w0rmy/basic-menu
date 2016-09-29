@@ -153,7 +153,7 @@ namespace prog_milestone2_team06
             }
             if (option == '2')
             {
-                amber2();
+                amber3();
                 ambersubmenu();
             }
             if (option == '3')
@@ -318,6 +318,8 @@ namespace prog_milestone2_team06
 
         static void amber1()
         {
+            //Commented out to get to compile
+
             // need to set a format for the entering and readline of data
             //int mark1;
             //int mark2;
@@ -340,7 +342,7 @@ namespace prog_milestone2_team06
             //Console.WriteLine("the percentage is {0}", percentage);
             //Console.WriteLine("Please enter your student ID number");
         }
-        static string amber3(int score)
+        static string amberscore(int score)
         {
             if (score >= 90 && score <= 100)
             {
