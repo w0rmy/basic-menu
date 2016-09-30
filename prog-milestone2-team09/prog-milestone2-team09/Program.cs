@@ -12,7 +12,7 @@ namespace prog_milestone2_team06
     {
         static void Main(string[] args)
         {
-            //acdc();
+            acdc();
             mainmenu();
         }
         static void Color(string value, string colorChoice)
