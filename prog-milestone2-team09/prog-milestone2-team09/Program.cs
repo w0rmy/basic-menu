@@ -12,7 +12,7 @@ namespace prog_milestone2_team06
     {
         static void Main(string[] args)
         {
-            acdc();
+            //acdc();
             mainmenu();
         }
         static void Color(string value, string colorChoice)
@@ -179,7 +179,7 @@ namespace prog_milestone2_team06
             Color("            |||           ", "Cyan");
             Color("            '|'           ", "Cyan");
             Console.Write(new string('\n', 1));
-            Color("1. Rate some foods  ", "Green");
+            Color("1. Rate some foods   ", "Green");
             Color("2. View your foods   ", "Magenta");
             Console.Write(new string('\n', 1));
             Color("3. Return to main menu.     ", "White");
@@ -300,6 +300,8 @@ namespace prog_milestone2_team06
             Color("Press any key to continue.", "White");
             Console.ReadKey();
         }
+
+
 // Belindas Code
         static void belinda1()
         {
@@ -314,8 +316,10 @@ namespace prog_milestone2_team06
             {
                 Console.Clear();
                 Color("Enter a favourite food of yours", "White");
+                Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
                 string f = Console.ReadLine();
                 Color("Now rate that favourite food between 1-5", "White");
+                Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
                 int r = int.Parse(Console.ReadLine());
                 fr.Add(f, r);
 
@@ -325,12 +329,36 @@ namespace prog_milestone2_team06
             }
             foreach (var a in fr)
             {
-                Console.WriteLine($"{a.Key} - {a.Value}");
+                Color($"{a.Key} - {a.Value}", "White");
             }
             Console.Clear();
         }
+        static void food(Dictionary<string, int> someDictionary)
+        {
+            {
+
+                Color("Would you like to display your favourite food in order of rate \"Y\" for yes or \"N\" for no", "White");
+                Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
+                var pick = (Console.ReadLine());
+
+                if (pick == "Y")
+                {
+                    //under finished
+
+                    Console.WriteLine("");
+                }
+                else if (pick == "N")
+                {
+                    Console.WriteLine("");
+
+                }
+
+            }
+        }
+
+
 // Ambers code      
-            static void Amber()
+        static void Amber()
             // If more time would have considered using temporary variables to collect the data 
             //followed by the program logi that can be accessed multiple places
             //then logic calculations
@@ -449,11 +477,11 @@ namespace prog_milestone2_team06
                 studentID = levelID.Keys.ElementAt(0);
                 level = levelID.Values.ElementAt(0);
 
-                Console.WriteLine($"Student ID: {studentID}");
-                Console.WriteLine($"Grade Level: {level}");
-                Console.WriteLine($"Paper Subjects: {String.Join(",", paperCodes)}");
-                Console.WriteLine($"Paper Percentages: {String.Join(",", gradeInfo)}");
-                Console.WriteLine($"Paper Letter Grades: {String.Join(",", letterInfo)}");
+                Color($"Student ID: {studentID}", "White");
+                Color($"Grade Level: {level}", "White");
+                Color($"Paper Subjects: {String.Join(",", paperCodes)}", "White");
+                Color($"Paper Percentages: {String.Join(",", gradeInfo)}", "White");
+                Color($"Paper Letter Grades: {String.Join(",", letterInfo)}", "White");
             }
 
             public static void calculateAverage(List<int> x)
@@ -467,15 +495,15 @@ namespace prog_milestone2_team06
                 }
 
                 average = sum / x.Count();
-                Console.WriteLine($"Your average grade mark is: {average}");
+                Color($"Your average grade mark is: {average}", "White");
 
                 if (average <= 100 && average >= 50)
                 {
-                    Console.WriteLine($"Congradulations you have passed you level of study!  You may continue into the next level of your study pathway. ");
+                    Color($"Congradulations you have passed you level of study!  You may continue into the next level of your study pathway. ", "White");
                 }
                 else
                 {
-                    Console.WriteLine($"I am sorry but the total of all your papers is not 50% so you do not pass.  Look into resiting the papers you did not pass. ");
+                    Color($"I am sorry but the total of all your papers is not 50% so you do not pass.  Look into resiting the papers you did not pass. ", "White");
                 }
             }
 
@@ -493,12 +521,12 @@ namespace prog_milestone2_team06
 
                 if (highSubjects.Count() > 0)
                 {
-                    Console.WriteLine($"Outstanding you achieved an 'A+' letter grade in the following subjects: {String.Join(", ", highSubjects)}");
+                    Color($"Outstanding you achieved an 'A+' letter grade in the following subjects: {String.Join(", ", highSubjects)}", "White");
                 }
                 else
                 {
-                    Console.WriteLine($"You did not score an 'A+' in any subject.");
-                    Console.WriteLine($"Get sum better study methods via the learning facilitators or actually study!");
+                    Color($"You did not score an 'A+' in any subject.", "White");
+                    Color($"Get sum better study methods via the learning facilitators or actually study!", "White");
                 }
             }
 
@@ -514,9 +542,10 @@ namespace prog_milestone2_team06
 
                 while (validCheck)
                 {
-                    Console.WriteLine($"Did you pass your level of study?");
-                    Console.WriteLine($"Please enter 5 for level 5, or enter 6 for level 6: ");
-                    level = Console.ReadLine();
+                Color($"Did you pass your level of study?", "White");
+                Color($"Please enter 5 for level 5, or enter 6 for level 6: ", "White");
+                Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
+                level = Console.ReadLine();
 
                     if (level == "6")
                     {
@@ -530,18 +559,20 @@ namespace prog_milestone2_team06
                     }
                     else
                     {
-                        Console.WriteLine($"Error: Please enter a valid level. Please enter 5 for level 5, or enter 6 for level 6:");
+                        Color($"Error: Please enter a valid level. Please enter 5 for level 5, or enter 6 for level 6:", "White");
                     }
                 }
 
                 for (int i = 0; i < paperAmount; i++)
                 {
-                    Console.WriteLine($"Please enter paper code, thank you. : "); //To use this as a reference instead of getting some info reentered ideal
+                    Color($"Please enter paper code, thank you. : ", "White"); //To use this as a reference instead of getting some info reentered ideal
+                    Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
                     string paperCode = Console.ReadLine();
                     paperInfo.Add(paperCode, 0);
                 }
 
-                Console.WriteLine($"Please Enter your Student ID Number: ");
+                Color($"Please Enter your Student ID Number: ", "White");
+                Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
                 string studentID = Console.ReadLine();
 
                 for (int i = 0; i < paperAmount; i++)
@@ -549,8 +580,9 @@ namespace prog_milestone2_team06
                     validCheck = true;
                     while (validCheck)
                     {
-                        Console.WriteLine($"Please re-enter a paper code (as above): "); //Not tidy UI this could be updated in the future
-                        string paperCode = Console.ReadLine();
+                        Color($"Please re-enter a paper code (as above): ", "White"); //Not tidy UI this could be updated in the future
+                    Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
+                    string paperCode = Console.ReadLine();
                         int paperGrade = 0;
 
                         if (paperInfo.TryGetValue(paperCode, out paperGrade))
@@ -560,10 +592,11 @@ namespace prog_milestone2_team06
 
                             while (gradeCheck)
                             {
-                                Console.WriteLine($"Please enter the mark you recieved for that paper: ");
+                                Color($"Please enter the mark you recieved for that paper: ", "White");
                                 try
                                 {
-                                    paperGrade = int.Parse(Console.ReadLine());
+                                Console.SetCursorPosition((Console.WindowWidth - 1) / 2, Console.CursorTop);
+                                paperGrade = int.Parse(Console.ReadLine());
 
                                     if (paperGrade <= 100 && paperGrade >= 0)
                                     {
@@ -575,7 +608,7 @@ namespace prog_milestone2_team06
                                     {
 
 
-                                        Console.WriteLine($"Error: Please enter an integer between 0 and 100.");
+                                        Color($"Error: Please enter an integer between 0 and 100.", "White");
 
                                     }
 
@@ -583,7 +616,7 @@ namespace prog_milestone2_team06
 
                                 catch (FormatException)
                                 {
-                                    Console.WriteLine($"Error: Invalid Grade.");
+                                    Color($"Error: Invalid Grade.", "White");
                                 }
                             }
 
@@ -591,7 +624,7 @@ namespace prog_milestone2_team06
                         }
                         else
                         {
-                            Console.WriteLine($"Error: Paper code not found. ");
+                            Color($"Error: Paper code not found. ", "White");
                         }
                     }
                 }
@@ -600,31 +633,6 @@ namespace prog_milestone2_team06
                 return gradeInfo;
             }
  
-        static void belinda2()
-        {
-            // Need research this 
-         }
-        static void food(Dictionary<string, int> someDictionary)
-        {
-            {
-
-                Color("Would you like to display your favourite food in order of rate \"Y\" for yes or \"N\" for no", "White");
-                var pick = (Console.ReadLine());
-
-                if (pick == "Y")
-                {
-                    //under finished
-
-                    Console.WriteLine("");
-                }
-                else if (pick == "N")
-                {
-                    Console.WriteLine("");
-
-                }
-
-            }
-        }
 // Jacobs code
         static void jacob1()
         {
